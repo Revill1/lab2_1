@@ -53,6 +53,22 @@ public class BinarySearchTest {
 		assertThat(result.isFound(),equalTo(false));
 	}
 	
+	@Test
+	public void testThrowsException() {
+		int[] seq =  new int[]{};
+		boolean throwed = false;
+		try{
+			SearchResult result = BinarySearch.search(4, seq);
+			assertThat(result.isFound(),equalTo(true));
+		}
+		catch(IllegalArgumentException x)
+		{
+			throwed = true;
+		}
+		assertTrue(throwed);
+		
+	}
+	
 	
 
 }
